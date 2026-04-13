@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS CATEGORIES (
+    category_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE IF NOT EXISTS PRODUCTS (
+    product_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    category_id BIGINT,
+    price DECIMAL NOT NULL CHECK (price >= 0),
+    stock_quantity INT NOT NULL DEFAULT 0 CHECK (stock_quantity >= 0),
+    image_url VARCHAR(500),
+    created_at DATE NOT NULL DEFAULT CURRENT_DATE,
+    updated_at DATE NOT NULL DEFAULT CURRENT_DATE,
+
+    FOREIGN KEY (category_id) REFERENCES CATEGORIES(category_id) ON DELETE SET NULL
+);
