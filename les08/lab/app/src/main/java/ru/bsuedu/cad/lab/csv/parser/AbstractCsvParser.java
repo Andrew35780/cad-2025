@@ -107,7 +107,6 @@ public abstract class AbstractCsvParser<T> implements Parser<T> {
         return parseValue(value, lineNumber, columnName, "decimal", BigDecimal::new);
     }
 
-    //TODO: asking chat for parsing date local date time errors catching
     protected LocalDate parseDate(String value, int lineNumber, String columnName) {
         return parseValue(value, lineNumber, columnName, "date",
                 v -> LocalDate.parse(v, DateTimeFormatter.ofPattern("yyyy-MM-dd")));

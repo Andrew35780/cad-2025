@@ -24,16 +24,11 @@ dependencies {
     // Source: https://mvnrepository.com/artifact/org.springframework/spring-context
     implementation("org.springframework:spring-context:6.2.2")
 
-    implementation("org.aspectj:aspectjweaver:1.9.23")
-
     // This dependency is used by the application.
     implementation(libs.guava)
 
     //
     implementation("javax.annotation:javax.annotation-api:1.3.2")
-
-    //
-    implementation("org.springframework:spring-jdbc:6.2.2")
 
     //
     implementation("com.h2database:h2:2.3.232");
